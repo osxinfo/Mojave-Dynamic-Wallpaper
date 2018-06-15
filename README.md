@@ -1,38 +1,38 @@
-# Mojave-Dynamic-Wallaper
+# Mojave-Dinamik-Duvarkağıdı
 
-There are 16 different phases for the Wallpaper
+Duvar Kağıdı için 16 farklı aşama vardır.
 
-This will change the wallpaper every 1,5 hours
+Bu betik her 1,5 saatte duvar kağıdını değiştirir.
 
-Tested on 10.13.4 should work on every macOS Version which uses launchd
+10.13.5 üzerinde denendi ve çalışmaktadır.Daha eski sürümlerde de çalışacaktır.
 
 
-## Install
+## Kurulum
 
-1. copy Folder Mojave to /Users/Shared
+1. Mojave klasörünü /Users/Shared içine kopyalayın.
 
 ```
 /Users/Shared/Mojave
 ```
 
-2. copy com.d3fault.mojavedynamicwallpaper.plist to ~/Library/LaunchAgents
+2. com.d3fault.mojavedynamicwallpaper.plist dosyasını ~/Library/LaunchAgents içine kopyalayın.
 ```
 ~/Library/LaunchAgents/com.d3fault.mojavedynamicwallpaper.plist
 ```
 
-3. register service with
+3. servisin sistem açılışı ile beraber çalıştırılmasını sağlamak için Terminal uygulamasını açın ve aşağıdaki komutu girin:
 ```
 launchctl load -w ~/Library/LaunchAgents/com.d3fault.mojavedynamicwallpaper.plist
 ```
 
 
-## Uninstall
+## Kaldırmak
 
-1. Unload service
+1. Servisin çalıştırılmasını durudun
 ```
 launchctl unload -w ~/Library/LaunchAgents/com.d3fault.mojavedynamicwallpaper.plist
 ```
-2. Delete Files
+2. Terminal kullanarak aşağıdaki dosyaları silin:
 ```
 rm ~/Library/LaunchAgents/com.d3fault.mojavedynamicwallpaper.plist
 rm -r "/Users/Shared/Mojave"
